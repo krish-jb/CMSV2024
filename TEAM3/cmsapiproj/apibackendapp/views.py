@@ -60,7 +60,8 @@ class LabTestPrescriptionViewSet(viewsets.ModelViewSet):
 
 
 class DoctorViewSet(viewsets.ModelViewSet):
-  queryset=Doctor.objects.all()
-  serializer_class=DoctorSerializer
-  filter_backends=[filters.SearchFilter]
-  search_fields=['DoctorId']
+    permission_classes = [AllowAny]
+    queryset=Doctor.objects.all()
+    serializer_class=DoctorSerializer
+    filter_backends=[filters.SearchFilter]
+    search_fields=['DoctorId']
