@@ -13,6 +13,8 @@ from .models import (
     Consultation,
     Appointment,
     LabTest,
+    LabTestCategory,
+    LabTestPrescription,
 )
 
 admin.site.register(Role)
