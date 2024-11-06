@@ -84,16 +84,16 @@ WSGI_APPLICATION = 'cmsapiproj.wsgi.application'
 # }
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'ems_api_proj',
-#         'USER' : 'root',
-#         'PASSWORD': 'faith',
-#         'HOST':'localhost',
-#         'PORT': 3306,
-#     }
-# }
+DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 'ems_api_proj',
+         'USER' : 'root',
+         'PASSWORD': '1234',
+         'HOST':'localhost',
+         'PORT': 3306,
+     }
+ }
 
 
 
@@ -140,11 +140,11 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-REST_FRAMEWORK = {
-'DEFAULT_AUTHENTICATION_CLASSES': (
-'rest_framework.authentication.TokenAuthentication',
-),
-'DEFAULT_PERMISSION_CLASSES': (
-'rest_framework.permissions.IsAuthenticated',
-),
-}
+# REST_FRAMEWORK = {
+# 'DEFAULT_AUTHENTICATION_CLASSES': (
+# 'rest_framework.authentication.TokenAuthentication',
+# ),
+# 'DEFAULT_PERMISSION_CLASSES': (
+# 'rest_framework.permissions.IsAuthenticated',
+# ),
+# }
