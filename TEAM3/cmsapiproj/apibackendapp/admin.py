@@ -9,6 +9,9 @@ from .models import (
     Role,
     MedicineCategory,
     Membership,
+    LabTest,
+    LabTestPrescription,
+    LabTestCategory,
 )
 
 # Register your models here.
@@ -21,3 +24,5 @@ admin.site.register(Specialization)
 admin.site.register(Role)
 admin.site.register(MedicineCategory)
 admin.site.register(Membership)
+admin.site.register(LabTest)
+admin.site.register(LabTestCategory)

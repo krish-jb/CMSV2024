@@ -1,11 +1,9 @@
 from rest_framework import serializers
-from .models import MedicinePrescription
+from .models import MedicinePrescription, LabTestPrescription
+
 
 class MedicinePrescriptionSerializer(serializers.ModelSerializer):
-    FREQUENCY_CHOICES = [
-        ("once_a_day", "Once a day"),
-        ("twice_a_day", "Twice a day")
-    ]
+    FREQUENCY_CHOICES = [("once_a_day", "Once a day"), ("twice_a_day", "Twice a day")]
 
     Frequency = serializers.ChoiceField(choices=FREQUENCY_CHOICES)
 
@@ -17,3 +15,9 @@ class MedicinePrescriptionSerializer(serializers.ModelSerializer):
             "Dosage",
             "Frequency",
         )
+
+
+class LabTestPrescriptionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LabTestPrescription
+        fields = ("AppointmentId", "LabTestId", "LabTestValue", "Remarks")

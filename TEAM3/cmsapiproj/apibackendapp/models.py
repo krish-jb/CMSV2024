@@ -11,6 +11,7 @@ class Role(models.Model):
     def __str__(self):
         return self.RoleName
 
+
 class Staff(models.Model):
     StaffId = models.AutoField(primary_key=True)
     FullName = models.CharField(max_length=100)
@@ -25,12 +26,14 @@ class Staff(models.Model):
     def __str__(self):
         return self.FullName
 
+
 class Specialization(models.Model):
     SpecializationId = models.AutoField(primary_key=True)
     SpecializationName = models.CharField(max_length=100)
 
     def __str__(self):
         return self.SpecializationName
+
 
 class Doctor(models.Model):
     DoctorId = models.AutoField(primary_key=True)
@@ -42,6 +45,7 @@ class Doctor(models.Model):
     def __str__(self):
         return f"Dr. {self.StaffId.FullName}"
 
+
 class Membership(models.Model):
     MembershipId = models.AutoField(primary_key=True)
     MembershipType = models.CharField(max_length=100)
@@ -49,6 +53,7 @@ class Membership(models.Model):
 
     def __str__(self):
         return self.MembershipType
+
 
 class Patient(models.Model):
     PatientId = models.AutoField(primary_key=True)
@@ -63,6 +68,7 @@ class Patient(models.Model):
     def __str__(self):
         return self.PatientName
 
+
 class Appointment(models.Model):
     AppointmentId = models.AutoField(primary_key=True)
     AppointmentDate = models.DateTimeField()
@@ -75,12 +81,14 @@ class Appointment(models.Model):
     def __str__(self):
         return f"Appointment {self.AppointmentId} - {self.AppointmentDate}"
 
+
 class MedicineCategory(models.Model):
     MedicineCategoryId = models.AutoField(primary_key=True)
     MedicineCategoryName = models.CharField(max_length=100)
 
     def __str__(self):
         return self.MedicineCategoryName
+
 
 class Medicine(models.Model):
     MedicineId = models.AutoField(primary_key=True)
@@ -94,6 +102,7 @@ class Medicine(models.Model):
     def __str__(self):
         return self.MedicineName
 
+
 class MedicinePrescription(models.Model):
     MedicinePrescriptionId = models.AutoField(primary_key=True)
     MedicineId = models.ForeignKey(Medicine, on_delete=models.CASCADE)
@@ -103,6 +112,7 @@ class MedicinePrescription(models.Model):
     AppointmentId = models.ForeignKey(Appointment, on_delete=models.CASCADE)
     IsActive = models.BooleanField(default=True)
 
+
 class Consultation(models.Model):
     ConsultationId = models.AutoField(primary_key=True)
     Symptoms = models.TextField()
@@ -111,6 +121,7 @@ class Consultation(models.Model):
     CreatedDate = models.DateTimeField(auto_now_add=True)
     AppointmentId = models.ForeignKey(Appointment, on_delete=models.CASCADE)
     IsActive = models.BooleanField(default=True)
+
 
 class MedicineStock(models.Model):
     MedicineStockId = models.AutoField(primary_key=True)
@@ -122,12 +133,14 @@ class MedicineStock(models.Model):
     CreatedDate = models.DateField()
     IsActive = models.BooleanField(default=True)
 
+
 class LabTestCategory(models.Model):
     LabTestCategoryId = models.AutoField(primary_key=True)
     LabTestCategoryName = models.CharField(max_length=100)
 
     def __str__(self):
         return self.LabTestCategoryName
+
 
 class LabTest(models.Model):
     LabTestId = models.AutoField(primary_key=True)
@@ -141,6 +154,7 @@ class LabTest(models.Model):
 
     def __str__(self):
         return self.TestName
+
 
 class LabTestPrescription(models.Model):
     LabTestPrescriptionId = models.AutoField(primary_key=True)
