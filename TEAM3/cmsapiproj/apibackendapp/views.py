@@ -3,6 +3,10 @@ from .models import MedicinePrescription, LabTestPrescription
 from rest_framework import viewsets, status
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
+from rest_framework import viewsets
+from .models import Doctor
+from .serializers import DoctorSerializer
+from rest_framework import filters
 
 # Create your views here.
 
@@ -53,3 +57,10 @@ class LabTestPrescriptionViewSet(viewsets.ModelViewSet):
             {"message": "Lab Test Prescription updated successfully."},
             status=status.HTTP_200_OK,
         )
+
+
+class DoctorViewSet(viewsets.ModelViewSet):
+  queryset=Doctor.objects.all()
+  serializer_class=DoctorSerializer
+  filter_backends=[filters.SearchFilter]
+  search_fields=['DoctorId']
