@@ -19,7 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('apibackendapp.urls')),  # Routes all 'api/' URLs to your app's URLs
+    path('api/', include('apibackendapp.urls'))
 ]
 
 

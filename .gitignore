@@ -1,0 +1,7 @@
+
+TEAM3/cmsapiproj/cmsapiproj/settings.py
+*.pyc
+/TEAM3/cmsapiproj/apibackendapp/migrations
+/TEAM3/env
+TEAM3/cmsapiproj/db.sqlite3
+TEAM3/cmsapiproj/cmsapiproj/settings.py
