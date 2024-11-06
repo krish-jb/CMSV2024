@@ -11,6 +11,7 @@ from rest_framework import filters
 # Create your views here.
 
 class MedicineStockViewSet(viewsets.ModelViewSet):
+    permission_classes = [AllowAny]
     queryset = MedicineStock.objects.all()
     serializer_class = MedicineStockSerializer
 
