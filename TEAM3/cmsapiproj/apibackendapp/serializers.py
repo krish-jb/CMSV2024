@@ -33,11 +33,6 @@ class MedicineStockSerializer(serializers.ModelSerializer):
         model = MedicineStock
         fields = '__all__'
 
-class MedicinePrescriptionSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = MedicinePrescription
-        fields = '__all__'
-
 
 class MedicineSerializer(serializers.ModelSerializer):
     class Meta:

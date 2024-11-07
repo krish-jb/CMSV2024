@@ -84,10 +84,6 @@ class MedicineViewSets(viewsets.ModelViewSet):
     queryset = Medicine.objects.all()
     serializer_class = MedicineSerializer
 
-class MedicinePrescriptionViewSets(viewsets.ModelViewSet):
-    permission_classes = [AllowAny]
-    queryset = Medicine.objects.all()
-    serializer_class = MedicinePrescriptionSerializer
 
 
 # class PatientViewSets(viewsets.ModelViewSet):
